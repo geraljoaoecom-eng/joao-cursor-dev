@@ -1,0 +1,14 @@
+{
+  "name": "cursor-project",
+  "version": "1.0.0",
+  "description": "Projeto inicial com integrações GitHub e Vercel",
+  "main": "index.js",
+  "scripts": {
+    "dev": "echo 'Development server not configured yet'",
+    "build": "echo 'Build process not configured yet'",
+    "start": "echo 'Start process not configured yet'"
+  },
+  "keywords": ["cursor", "github", "vercel"],
+  "author": "geraljoaoecom-eng",
+  "license": "MIT"
+}
