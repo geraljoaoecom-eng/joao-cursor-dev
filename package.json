@@ -1,5 +1,5 @@
 {
-  "name": "cursor-project",
+  "name": "cursor-workspace",
   "version": "1.0.0",
   "description": "Projeto inicial com integrações GitHub e Vercel",
   "main": "index.js",

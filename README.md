@@ -1,4 +1,4 @@
-# Cursor Project
+# Cursor Workspace
 
 Este é um projeto inicial configurado com integrações GitHub e Vercel.
 
