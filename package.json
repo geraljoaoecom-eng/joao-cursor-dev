@@ -4,9 +4,9 @@
   "description": "Projeto inicial com integrações GitHub e Vercel",
   "main": "index.js",
   "scripts": {
-    "dev": "echo 'Development server not configured yet'",
-    "build": "echo 'Build process not configured yet'",
-    "start": "echo 'Start process not configured yet'"
+    "dev": "python3 -m http.server 3000",
+    "build": "mkdir -p dist && cp index.html dist/index.html",
+    "start": "python3 -m http.server 3000"
   },
   "keywords": ["cursor", "github", "vercel"],
   "author": "geraljoaoecom-eng",
