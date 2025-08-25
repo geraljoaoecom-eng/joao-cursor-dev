@@ -9,25 +9,31 @@ Este é um projeto inicial configurado com integrações GitHub, Vercel e Supaba
 
 ## Scripts disponíveis:
 
-### `./supabase-setup.sh <project-name> [region] [org]`
-Cria automaticamente um projeto Supabase e configura as variáveis de ambiente.
+### `./auto-setup.sh <project-name> [github-username]` ⭐ **RECOMENDADO**
+**Script de automação completa** que detecta automaticamente se precisa de banco e configura TUDO sozinho!
 
 **Uso:**
 ```bash
-# Criar projeto "meu-projeto" na região us-east-1
-SUPABASE_PAT=seu_token_aqui ./supabase-setup.sh meu-projeto us-east-1
+# Configurar projeto "meu-projeto" automaticamente
+./auto-setup.sh meu-projeto
 
-# O script irá:
-# 1. Criar projeto no Supabase
-# 2. Gerar arquivos .env na raiz e no projeto
-# 3. Configurar variáveis no Vercel (se CLI autenticado)
+# O script faz TUDO automaticamente:
+# 1. ✅ Cria estrutura do projeto
+# 2. ✅ Detecta necessidade de banco (sempre sim)
+# 3. ✅ Cria projeto Supabase
+# 4. ✅ Configura variáveis no Vercel
+# 5. ✅ Inicializa Git e faz commit
+# 6. ✅ Testa build e conexão
 ```
 
-**Variáveis geradas:**
-- `SUPABASE_URL`: URL da API do projeto
-- `SUPABASE_ANON_KEY`: Chave anônima para autenticação
-- `SUPABASE_PROJECT_ID`: ID do projeto
-- `SUPABASE_DB_PASSWORD`: Senha do banco (se novo projeto)
+**Funcionalidades automáticas:**
+- 🗄️ **Supabase**: Projeto criado + variáveis configuradas
+- ☁️ **Vercel**: Variáveis de ambiente configuradas automaticamente
+- 📝 **Git**: Repositório inicializado + primeiro commit
+- 🧪 **Teste**: Build testado + conexão Supabase validada
+
+### `./supabase-setup.sh <project-name> [region] [org]`
+Script manual para criar apenas o projeto Supabase.
 
 ### `./new-project.sh <project-name> [github-username]`
 Cria um novo projeto com estrutura básica para deploy na Vercel.
@@ -36,8 +42,27 @@ Cria um novo projeto com estrutura básica para deploy na Vercel.
 Inicia servidor de desenvolvimento com live reload.
 
 ## Como usar:
-1. Para integrar Supabase em um projeto:
-   - Gere um PAT na Supabase (Account Settings → Access Tokens)
+
+### 🚀 **Setup Automático (RECOMENDADO):**
+```bash
+# 1. Configurar projeto automaticamente
+./auto-setup.sh nome-do-projeto
+
+# 2. O script faz TUDO sozinho:
+#    ✅ Cria estrutura do projeto
+#    ✅ Cria projeto Supabase
+#    ✅ Configura Vercel
+#    ✅ Inicializa Git
+#    ✅ Testa tudo
+
+# 3. Próximos passos:
+cd nome-do-projeto
+git push -u origin main
+# Importar na Vercel → Deploy automático!
+```
+
+### 🔧 **Setup Manual:**
+1. Para integrar Supabase em um projeto existente:
    - Execute: `SUPABASE_PAT=token ./supabase-setup.sh nome-projeto`
 2. Desenvolva seu projeto
 3. Faça commit: `git add . && git commit -m "sua mensagem"`
